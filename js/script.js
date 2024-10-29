@@ -51,9 +51,32 @@ ScrollReveal().reveal('.home-content p, .about-content p, .btn-box.btns, .skills
 
 // typed js animacion escritura
 const typed = new Typed('.multiple-text', {
-    strings: ['Software Developer', 'FrontEnd Developer', 'SQL Developer'],
+    strings: ['Software Developer', 'Data Analyst', 'SQL Developer', 'Web Developer'],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
     loop: true
 })
+
+// Boton leer mas action
+document.addEventListener('DOMContentLoaded', function () {
+    const botonToggle = document.querySelector('.toggle-texto');
+    const textoInicial = document.querySelector('.texto-inicial');
+    const textoExpandido = document.querySelector('.texto-expandido');
+
+    if (botonToggle && textoExpandido) { 
+        botonToggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            textoExpandido.classList.toggle('mostrar');
+            
+            if (textoExpandido.classList.contains('mostrar')) {
+                botonToggle.textContent = 'Leer menos';
+                textoInicial.style.opacity = '0.9';
+            } else {
+                botonToggle.textContent = 'Leer más';
+                textoInicial.style.opacity = '1';
+            }
+        });
+    }
+});

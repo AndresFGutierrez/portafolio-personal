@@ -238,6 +238,7 @@ span {
 
 .about-content {
     text-align: center;
+    margin: 0 auto;
 }
 
 .about-content h3 {
@@ -248,6 +249,7 @@ span {
 .about-content p {
     font-size: 1.6rem;
     margin: 1.5rem 0 2rem;
+    color: var(--color-dark);
 }
 
 .btn-box.btns {
@@ -257,6 +259,29 @@ span {
 
 .btn-box.btns a::before {
     background-color: var(--color-accent);
+}
+
+.texto-inicial {
+    transition: opacity 0.3s ease;
+}
+
+.texto-expandido {
+    transition: all 0.3s ease;
+    overflow: hidden;
+    margin: 1rem auto;
+    opacity: 0;
+    max-height: 0;
+    visibility: hidden;
+    color: var(--color-dark);
+    width: 100%;
+    text-align: center;
+}
+
+.texto-expandido.mostrar {
+    opacity: 1;
+    max-height: 1000px;
+    margin: 1.5rem 0 2rem;
+    visibility: visible;
 }
 
 /* educacion seccion estilos */
@@ -344,6 +369,15 @@ span {
     font-size: 2rem;
 }
 
+.education-content .content h3 a {
+    color: var(--color-dark);
+    text-decoration: none;
+}
+
+.education-content .content h3 a:hover {
+    color: var(--color-accent);
+}
+
 .education-content .content p {
     font-size: 1.6rem;
     padding: 1rem 0 1.5rem;
@@ -407,6 +441,12 @@ span {
     justify-content: space-between;
 }
 
+.skills-content .progress h4 {
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
 .skills-content .progress h3 span {
     color: var(--color-accent);
 }
@@ -427,19 +467,23 @@ span {
 }
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span {
-    width: 95%;
+    width: 77%;
 }
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(2) .bar span {
-    width: 88%;
+    width: 80%;
 }
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(3) .bar span {
-    width: 75%;
+    width: 70%;
 }
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(4) .bar span {
-    width: 65%;
+    width: 80%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(5) .bar span {
+    width: 85%;
 }
 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(1) .bar span {
@@ -451,11 +495,15 @@ span {
 }
 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(3) .bar span {
-    width: 75%;
+    width: 85%;
 }
 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(4) .bar span {
-    width: 65%;
+    width: 75%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(5) .bar span {
+    width: 80%;
 }
 
 /* contact section estilos */
@@ -635,7 +683,7 @@ button.btn {
 }
 
 @media (max-width: 991px) {
-    
+
 
     .header {
         padding: 2rem 3%;
